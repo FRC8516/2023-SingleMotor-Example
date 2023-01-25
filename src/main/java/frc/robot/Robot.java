@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-import com.revrobotics.RelativeEncoder;
-import com.revrobotics.SparkMaxRelativeEncoder;
+//import com.revrobotics.RelativeEncoder;
+//import com.revrobotics.SparkMaxRelativeEncoder;
 
 /**
  * This sample program shows how to control a motor using a joystick. In the operator control part
@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
    * or a sensor type and counts per revolution can be passed in to specify
    * a different kind of sensor. Here, it's a quadrature encoder with 4096 CPR.
    */
-  private RelativeEncoder m_encoder;
+  //private RelativeEncoder m_encoder;
 
   @Override
   public void robotInit() {
@@ -57,7 +57,7 @@ public class Robot extends TimedRobot {
     //Joystick variable
     m_joystick = new Joystick(kJoystickPort);
     //set encoder constructor of the spark max
-    m_encoder = m_motorSpark.getEncoder(SparkMaxRelativeEncoder.Type.kQuadrature, 4096);
+    //m_encoder = m_motorSpark.getEncoder(SparkMaxRelativeEncoder.Type.kQuadrature, 4096);
      /**
      * The RestoreFactoryDefaults method can be used to reset the configuration parameters
      * in the SPARK MAX to their factory default state. If no argument is passed, these
@@ -77,7 +77,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Joystick Y",m_joystick.getY());
     SmartDashboard.putNumber("Joystick X",m_joystick.getX());
     m_dSpeed = SmartDashboard.getNumber("Falcon Speed", 0);
-    SmartDashboard.putNumber("ProcessVariable", m_encoder.getPosition());
+    //SmartDashboard.putNumber("ProcessVariable", m_encoder.getPosition());
      // periodically read voltage, temperature, and applied output and publish to SmartDashboard
      SmartDashboard.putNumber("Voltage", m_motorSpark.getBusVoltage());
      SmartDashboard.putNumber("Temperature", m_motorSpark.getMotorTemperature());
